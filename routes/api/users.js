@@ -13,7 +13,11 @@ router.get("/test", (req, res) => res.json({ msg: "Users Work" }));
 // @desc    Register a user
 // @access  Public
 router.post("/register", (req, res) => {
-    
+  User.findOne({ email: req.body.email }).then(user => {
+    if (user) {
+      return res.status(400).json({ email: "Email already exists" });
+    }
+  });
 });
 
 module.exports = router;

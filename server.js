@@ -8,6 +8,11 @@ const posts = require("./routes/api/posts");
 
 const app = express();
 
+// Body Parser
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
+
 // DB config
 const db = require("./config/keys").mongoURI;
 mongoose
