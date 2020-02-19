@@ -1,7 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
-const gravatar = require("gravatar");
 const bcrypt = require("bcryptjs");
 
 const users = require("./routes/api/users");
@@ -17,7 +16,7 @@ app.use(bodyParser.json());
 // DB config
 const db = require("./config/keys").mongoURI;
 mongoose
-  .connect(db)
+  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Mongodb Connected!"))
   .catch(err => console.log(err));
 
