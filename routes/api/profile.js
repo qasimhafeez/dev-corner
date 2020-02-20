@@ -184,7 +184,7 @@ router.post(
         current: req.body.current,
         description: req.body.description
       };
-      profile.experience.unshift(newEdu);
+      profile.education.unshift(newEdu);
       profile.save().then(profile => res.json(profile));
     });
   }
