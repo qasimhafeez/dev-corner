@@ -12,11 +12,6 @@ const validateEducationInput = require("../../validation/education");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 
-// @route   GET api/profile/test
-// @desc    Test post route
-// @access  Public
-router.get("/test", (req, res) => res.json({ msg: "Profile Work" }));
-
 // @route   GET api/profile/handle/:handle
 // @desc    Get user by handle
 // @access  Public
@@ -117,8 +112,6 @@ router.post(
           { new: true }
         ).then(profile => res.json(profile));
       } else {
-        // Create
-
         // Check if handle exists
         Profile.findOne({ handle: profileFields.handle }).then(handle => {
           if (handle) {
@@ -137,7 +130,6 @@ router.post(
 // @route   post api/profile/experience
 // @desc    Add experience to profile
 // @access  Private
-
 router.post(
   "/experience",
   passport.authenticate("jwt", { session: false }),
@@ -165,7 +157,6 @@ router.post(
 // @route   post api/profile/education
 // @desc    Add education to profile
 // @access  Private
-
 router.post(
   "/education",
   passport.authenticate("jwt", { session: false }),
@@ -193,7 +184,6 @@ router.post(
 // @route   DELETE api/profile/experience/:exp_id
 // @desc    Delete experience from profile
 // @access  Private
-
 router.delete(
   "/experience/:exp_id",
   passport.authenticate("jwt", { session: false }),
@@ -216,7 +206,6 @@ router.delete(
 // @route   DELETE api/profile/education/:edu_id
 // @desc    Delete education from profile
 // @access  Private
-
 router.delete(
   "/education/:edu_id",
   passport.authenticate("jwt", { session: false }),
@@ -239,7 +228,6 @@ router.delete(
 // @route   DELETE api/profile/
 // @desc    Delete user and profile
 // @access  Private
-
 router.delete(
   "/",
   passport.authenticate("jwt", { session: false }),
