@@ -20,17 +20,17 @@ class Register extends Component {
   }
 
   // UNSAFE Now
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.errors) {
-  //     this.setState({ errors: nextProps.errors });
-  //   }
-  // }
-
-  static getDerivedStateFromProps(nextProps) {
+  componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
-      return { errors: nextProps.errors };
-    } else return "";
+      this.setState({ errors: nextProps.errors });
+    }
   }
+
+  // static getDerivedStateFromProps(nextProps) {
+  //   if (nextProps.errors) {
+  //     return { errors: nextProps.errors };
+  //   } else return "";
+  // }
 
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
