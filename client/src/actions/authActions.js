@@ -2,6 +2,7 @@ import axios from "axios";
 import setAuthToken from "../utils/setAuthToken";
 import jwt_decode from "jwt-decode";
 
+// Import types
 import { GET_ERRORS, SET_CURRENT_USER } from "./types";
 
 // Register User
@@ -57,5 +58,4 @@ export const logoutUser = () => dispatch => {
   setAuthToken(false);
   // Set user to {}
   dispatch(setCurrentUser({}));
-  window.location.href = "/";
 };
