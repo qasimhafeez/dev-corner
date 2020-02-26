@@ -23,10 +23,17 @@ class Login extends Component {
   //   }
   // }
 
+  // Component lifecycles
+  componentDidMount() {
+    if (this.props.auth.isAuthenticated) {
+      this.props.history.push("/dashboard");
+    }
+  }
+
   // Static component lifecycle method
-  static getDerivedStateFromProps(nextProps, prevState) {
+  static getDerivedStateFromProps(nextProps) {
     if (nextProps.auth.isAuthenticated) {
-      prevState.props.history.push("/dashboard");
+      nextProps.history.push("/dashboard");
     }
     if (nextProps.errors) {
       return { errors: nextProps.errors };
