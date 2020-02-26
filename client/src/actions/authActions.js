@@ -57,4 +57,5 @@ export const logoutUser = () => dispatch => {
   setAuthToken(false);
   // Set user to {}
   dispatch(setCurrentUser({}));
+  window.location.href = "/";
 };
