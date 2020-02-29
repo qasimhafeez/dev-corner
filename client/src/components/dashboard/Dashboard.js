@@ -9,6 +9,8 @@ import { getCurrentProfile, deleteAccount } from "../../actions/profileActions";
 import Spinner from "../common/Spinner";
 // Loading dashboard components
 import ProfileActions from "../dashboard/ProfileActions";
+import Experience from "../dashboard/Experience";
+import Education from "../dashboard/Education";
 
 class Dashboard extends Component {
   // Component lifecycle
@@ -36,6 +38,8 @@ class Dashboard extends Component {
               Welcome <Link to={`/profile/${profile.handle}`}>{user.name}</Link>
             </p>
             <ProfileActions />
+            <Education education={profile.education} />
+            <Experience experience={profile.experience} />
             <div style={{ marginBottom: "60px" }}></div>
             <button
               onClick={this.onDeleteAccount.bind(this)}
