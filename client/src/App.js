@@ -20,6 +20,8 @@ import EditProfile from "./components/edit-profile/EditProfile";
 import AddExperience from "./components/add-profile-details/AddExperience";
 import AddEducation from "./components/add-profile-details/AddEducation";
 import Profiles from "./components/profiles/Profiles";
+import Profile from "./components/profile/Profile";
+import NotFound from "./components/not-found/NotFound";
 
 import "./App.css";
 
@@ -50,7 +52,9 @@ function App() {
           <div className="container">
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/profile/:handle" component={Profile} />
             <Route exact path="/profiles" component={Profiles} />
+            <Route exact path="/not-found" component={NotFound} />
             {/* Private Routes */}
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
