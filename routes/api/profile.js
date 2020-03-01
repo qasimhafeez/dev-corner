@@ -12,6 +12,23 @@ const validateEducationInput = require("../../validation/education");
 const Profile = require("../../models/Profile");
 const User = require("../../models/User");
 
+// @route   GET api/profile/all
+// @desc    Get all profiles
+// @access  Public
+router.get("/api/profile/all", (req, res) => {
+  const errors = {};
+  Profile.find()
+    .populate("user", ["name", "avatar"])
+    .then(profiles => {
+      if (!profiles) {
+        errors.noProfile = "No profile exists";
+        res.status(404).json(errors);
+      }
+      res.json(profiles);
+    })
+    .catch(err => res.status(404).json({ noProfile: "No profile exists" }));
+});
+
 // @route   GET api/profile/handle/:handle
 // @desc    Get user by handle
 // @access  Public
