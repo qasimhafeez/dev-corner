@@ -15,7 +15,7 @@ const User = require("../../models/User");
 // @route   GET api/profile/all
 // @desc    Get all profiles
 // @access  Public
-router.get("/api/profile/all", (req, res) => {
+router.get("/all", (req, res) => {
   const errors = {};
   Profile.find()
     .populate("user", ["name", "avatar"])
