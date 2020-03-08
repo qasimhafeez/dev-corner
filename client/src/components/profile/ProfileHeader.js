@@ -31,6 +31,7 @@ class ProfileHeader extends Component {
                   <a
                     className="text-white p-2"
                     href={profile.website}
+                    // eslint-disable-next-line
                     target="_blank"
                   >
                     <i className="fas fa-globe fa-2x" />
@@ -41,6 +42,7 @@ class ProfileHeader extends Component {
                   <a
                     className="text-white p-2"
                     href={profile.social.twitter}
+                    // eslint-disable-next-line
                     target="_blank"
                   >
                     <i className="fab fa-twitter fa-2x" />
@@ -51,6 +53,7 @@ class ProfileHeader extends Component {
                   <a
                     className="text-white p-2"
                     href={profile.social.facebook}
+                    // eslint-disable-next-line
                     target="_blank"
                   >
                     <i className="fab fa-facebook fa-2x" />
@@ -61,6 +64,7 @@ class ProfileHeader extends Component {
                   <a
                     className="text-white p-2"
                     href={profile.social.linkedin}
+                    // eslint-disable-next-line
                     target="_blank"
                   >
                     <i className="fab fa-linkedin fa-2x" />
@@ -71,6 +75,7 @@ class ProfileHeader extends Component {
                   <a
                     className="text-white p-2"
                     href={profile.social.youtube}
+                    // eslint-disable-next-line
                     target="_blank"
                   >
                     <i className="fab fa-youtube fa-2x" />
@@ -81,6 +86,7 @@ class ProfileHeader extends Component {
                   <a
                     className="text-white p-2"
                     href={profile.social.instagram}
+                    // eslint-disable-next-line
                     target="_blank"
                   >
                     <i className="fab fa-instagram fa-2x" />
