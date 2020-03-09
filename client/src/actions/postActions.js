@@ -31,7 +31,7 @@ export const getPosts = () => dispatch => {
 
 // Get post by :id
 export const getPost = id => dispatch => {
-  dispatch(setPostLoading());
+  // dispatch(setPostLoading());
   axios
     .get(`/api/posts/${id}`)
     .then(res =>
