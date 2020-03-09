@@ -6,7 +6,7 @@ import { deleteExperience } from "../../actions/profileActions";
 
 class Experience extends Component {
   onDelete(id) {
-    this.props.deleteEducation(id);
+    this.props.deleteExperience(id);
   }
   render() {
     const experience = this.props.experience.map(exp => (
@@ -52,7 +52,7 @@ class Experience extends Component {
 }
 
 Experience.propTypes = {
-  deleteEducation: PropTypes.func.isRequired
+  deleteExperience: PropTypes.func.isRequired
 };
 
 export default connect(null, { deleteExperience })(Experience);
