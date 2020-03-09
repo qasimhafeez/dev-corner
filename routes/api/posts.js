@@ -78,7 +78,7 @@ router.delete(
 // @route   POST api/posts/like/:id
 // @desc    Like post
 // @access  Private
-router.delete(
+router.post(
   "/like/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
@@ -99,7 +99,7 @@ router.delete(
           post.save().then(post => res.json(post));
         })
         .catch(err =>
-          req.status(404).json({ postNotFound: "Post not found!" })
+          res.status(404).json({ postNotFound: "Post not found!" })
         );
     });
   }
@@ -108,7 +108,7 @@ router.delete(
 // @route   POST api/posts/like/:id
 // @desc    Unlike post
 // @access  Private
-router.delete(
+router.post(
   "/unlike/:id",
   passport.authenticate("jwt", { session: false }),
   (req, res) => {
@@ -130,13 +130,13 @@ router.delete(
             .indexOf(req.user.id);
 
           // Remove the index
-          post.likes.splice(removeIndex, -1);
+          post.likes.splice(removeIndex, 1);
 
           // Save
           post.save().then(post => res.json(post));
         })
         .catch(err =>
-          req.status(404).json({ postNotFound: "Post not found!" })
+          res.status(404).json({ postNotFound: "Post not found!" })
         );
     });
   }
