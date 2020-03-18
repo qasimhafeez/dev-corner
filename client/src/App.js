@@ -30,7 +30,7 @@ import "./App.css";
 // Save token into local storage for reuse
 if (localStorage.jwtToken) {
   // Set header
-  setAuthToken(localStorage.setAuthToken);
+  setAuthToken(localStorage.jwtToken);
   const decoded = jwt_decode(localStorage.jwtToken);
   // Set authicated user
   store.dispatch(setCurrentUser(decoded));
